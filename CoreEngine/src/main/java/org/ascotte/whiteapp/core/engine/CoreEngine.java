@@ -1,6 +1,6 @@
 package org.ascotte.whiteapp.core.engine;
 
-class CoreEngine {
+public class CoreEngine {
 
     private String message;
 
@@ -8,6 +8,11 @@ class CoreEngine {
         this.message = message;
     }
 
+    /**
+     * Main class of CoreEngine
+     *
+     * @args = the input of the main class
+     */
     public static void main(String[] args) {
 
         CoreEngine engine = new CoreEngine("Hello world");
@@ -15,6 +20,7 @@ class CoreEngine {
     }
 
     private void process() {
+        message.chars().forEach(System.out::println);
         System.out.println(message + " = " + this.getNumberOfLetters());
     }
 
