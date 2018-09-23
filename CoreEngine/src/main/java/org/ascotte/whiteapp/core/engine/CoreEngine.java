@@ -11,7 +11,7 @@ public class CoreEngine {
     /**
      * Main class of CoreEngine
      *
-     * @args = the input of the main class
+     * @param args = the input of the main class
      */
     public static void main(String[] args) {
 
