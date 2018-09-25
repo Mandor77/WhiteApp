@@ -1,16 +1,39 @@
 package org.ascotte.whiteapp.book.engine.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String author;
     private String title;
     private String genre;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yy")
     private LocalDate publicationDate;
     private BigDecimal price;
     private boolean paperback;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getAuthor() {
         return author;
